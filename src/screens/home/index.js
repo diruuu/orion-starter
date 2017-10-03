@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-// import FacebookLogo from '../../svgs/facebook-logo';
+import FacebookLogo from '../../svgs/facebook-logo';
 import styles from './styles';
 
 class Home extends Component {
@@ -14,7 +14,7 @@ class Home extends Component {
         <Text>
           This is your home. Now you are not a homeless anymore. Congratulation.
         </Text>
-        {/* <FacebookLogo /> */}
+        <FacebookLogo />
       </View>
     );
   }
