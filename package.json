@@ -1,7 +1,23 @@
 {
   "name": "react-native-template-orion",
-  "version": "0.3.0",
-  "scripts": {
-    "postinstall": "node ./postInstall.js"
-  }
+  "version": "0.3.3",
+  "description": "Template / boilerplate for React Native Project with Redux, React Navigation, React Native SVG, React Native Extended Stylesheet, and ESLint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diruuu/orion-starter.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "template",
+    "starter",
+    "boilerplate",
+    "kit"
+  ],
+  "author": "Rudi Wahyudi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diruuu/orion-starter/issues"
+  },
+  "homepage": "https://github.com/diruuu/orion-starter"
 }
