@@ -3,6 +3,7 @@ Template / boilerplate for React Native Project with Redux, React Navigation, Re
 
 ## Specs (updated October 4, 2017)
 - React v16.0.0-alpha.12
+- Redux v3.7.2
 - React Native v0.48.4
 - React Native Extended Stylesheet v0.6.0
 - React Navigation v1.0.0-beta.13

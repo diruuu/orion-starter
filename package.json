@@ -1,6 +1,6 @@
 {
   "name": "react-native-template-orion",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Template / boilerplate for React Native Project with Redux, React Navigation, React Native SVG, React Native Extended Stylesheet, and ESLint",
   "repository": {
     "type": "git",
