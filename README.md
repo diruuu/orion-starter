@@ -6,6 +6,8 @@ Template / boilerplate for essential React Native Project
 State management to make the logic part of your component stored in a neat and predictable way.
 - **Redux Persist**<br />
   Persist the redux state to asyncStorage so it will still be available even after the app close.
+- **React Offline**<br />
+  Functionality for offline support which integrated to Redux
 - **React Native Extended Stylesheet v0.6.0**<br />
   Extend the functionality of stylesheet to support variable, percent, media-query and many more
 - **React Navigation v1.0.0-beta.13**<br />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { withNetworkConnectivity } from 'react-native-offline';
 import LighterIcon from '../../svgs/lighter';
 import styles from './styles';
 import { changeFireColor } from './actions';
@@ -18,7 +19,7 @@ class Home extends Component {
     }
   }
   render() {
-    const { homeState: { fireColor } } = this.props;
+    const { homeState: { fireColor }, isConnected } = this.props;
     return (
       <View style={styles.home}>
         <View style={styles.homeIcon}>
@@ -32,11 +33,17 @@ class Home extends Component {
           onPress={() => this.lightLighter()}>
           <Text style={styles.buttonText}>Toggle light the lighter</Text>
         </TouchableOpacity>
+        {isConnected ? (
+          <Text>Connected</Text>
+        ) : (
+          <Text>Not connected</Text>
+        )}
       </View>
     );
   }
 }
 
+const NetworkCheckHome = withNetworkConnectivity()(Home);
 export default connect(state => ({
   homeState: state.homeState,
-}))(Home);
+}))(NetworkCheckHome);

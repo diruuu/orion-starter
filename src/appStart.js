@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { PersistGate } from 'redux-persist/es/integration/react';
+import { withNetworkConnectivity } from 'react-native-offline';
 import createStore from './createStore';
 // Persist Loading compoonent
 import PersistLoading from './components/persist-loading';
@@ -20,6 +21,10 @@ const AppStart = StackNavigator({
     backgroundColor: '#fff',
   },
 });
+// Wrapped App component with HOC from react-native-offline
+const App = withNetworkConnectivity({
+  withRedux: true,
+})(AppStart);
 // Root component
 function Root() {
   return (
@@ -28,7 +33,7 @@ function Root() {
         loading={<PersistLoading />}
         onBeforeLift={onBeforeLift}
         persistor={persistor}>
-        <AppStart />
+        <App />
       </PersistGate>
     </Provider>
   );

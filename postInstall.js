@@ -1,6 +1,7 @@
 const execSync = require('child_process').execSync;
 const fs = require('fs');
 const path = require('path');
+const IPAddress = '192.168.99.10';
 
 /**
  * Use Yarn if available, it's much faster than the npm client.
@@ -60,6 +61,32 @@ function removeUnnecessaryFiles() {
   });
 }
 
+function replaceInFile(file, search, target) {
+  const fs = require('fs');
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err) {
+      return console.log(err);
+    }
+    const result = data.replace(search, target);
+    return fs.writeFile(file, result, 'utf8', (error) => {
+      if (error) {
+        return console.log(error);
+      }
+    });
+  });
+}
+
+function addNetworkPermission() {
+  replaceInFile('./android/app/src/main/AndroidManifest.xml', /<uses-permission android:name="android\.permission\.SYSTEM_ALERT_WINDOW"(?:[\s]?)\/>/g, `<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`);
+}
+
+function changeReactNativeHost() {
+  replaceInFile('./node_modules/react-native/Libraries/Core/Devtools/setupDevtools.js', /localhost/g, IPAddress)
+}
+
 installDevDependencies();
 createScripts();
 removeUnnecessaryFiles();
+addNetworkPermission();
+changeReactNativeHost();
