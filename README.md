@@ -1,14 +1,19 @@
 # Orion Starter
-Template / boilerplate for React Native Project with Redux, React Navigation, React Native SVG, React Native Extended Stylesheet, and ESLint
+Template / boilerplate for essential React Native Project
 
-## Specs (updated October 4, 2017)
-- React v16.0.0-alpha.12
-- Redux v3.7.2
-- React Native v0.48.4
-- React Native Extended Stylesheet v0.6.0
-- React Navigation v1.0.0-beta.13
-- React Native SVG v5.4.1
-- ESLint v4.7.2
+## Third Party Module List (updated October 10, 2017)
+- *Redux v3.7.2*
+  State management to make the logic part of your component stored in a neat and predictable way.
+- *Redux Persist*
+  Persist the redux state to asyncStorage so it will still be available even after the app close.
+- *React Native Extended Stylesheet v0.6.0*
+  Extend the functionality of stylesheet to support variable, percent, media-query and many more
+- *React Navigation v1.0.0-beta.13*
+  JS based navigation solution for React Native
+- *React Native SVG v5.4.1*
+  Easily use SVG in the project
+- *ESLint v4.7.2*
+  Tool to check and assure your code clean
 
 ## How to generate React Native App
 ```

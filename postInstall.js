@@ -49,11 +49,17 @@ function installDevDependencies() {
   }
 }
 
-function removeUnnecessaryScript() {
-  execSync('rm -rf ./devDependencies.json');
-  execSync('rm -rf ./postInstall.js');
+function removeUnnecessaryFiles() {
+  const unwantedFiles = [
+    './devDependencies.json',
+    './postInstall.js',
+    './App.js'
+  ];
+  unwantedFiles.map((file) => {
+    execSync(`rm -rf ${file}`);
+  });
 }
 
 installDevDependencies();
 createScripts();
-removeUnnecessaryScript();
+removeUnnecessaryFiles();

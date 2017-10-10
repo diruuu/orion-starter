@@ -1,13 +1,4 @@
-export const increment = id => ({
-  type: 'HOME/INCREMENT',
-  payload: {
-    id,
-  },
-});
-
-export const decrement = id => ({
-  type: 'HOME/DECREMENT',
-  payload: {
-    id,
-  },
+export const changeFireColor = fireColor => ({
+  type: 'HOME/CHANGE_FIRE_COLOR',
+  fireColor,
 });

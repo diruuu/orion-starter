@@ -1,18 +1,12 @@
 const initialState = {
-  idGen: 0,
-  counters: {},
+  fireColor: '#000',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'HOME/INCREMENT': {
+    case 'HOME/CHANGE_FIRE_COLOR': {
       return {
-        ...state, activities: action.payload,
-      };
-    }
-    case 'HOME/DECREMENT': {
-      return {
-        ...state, activities: [...state.activities, action.payload],
+        ...state, fireColor: action.fireColor,
       };
     }
     default: {
